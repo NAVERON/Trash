@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<title>地图测试程序</title>
+	
+	<!-- 添加js文件     导入到同一页面中的js可以互相访问，注意调用顺序 -->
+	<!-- <script src = "javascript/jquery-3.1.1.js" type = "text/javascript"></script> -->
+	
+    <script type = "text/javascript" src="http://cache.amap.com/lbs/static/es5.min.js"></script>  <!-- 高德地图 -->
+    <!-- <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script> --> <!-- 高德地图 -->
+    <!-- 第一个高德地图，第二个百度地图 -->
+	<script type = "text/javascript" src = "http://webapi.amap.com/maps?v=1.3&key=235ee41a7b213b45eecd2399a515c840"></script>
+	<script type = "text/javascript" src = "http://api.map.baidu.com/api?v=2.0&ak=baWmU2xtYM5dNGqFNt3pAPEbObuhyl9W"></script>
+	<script type = "text/javascript"  src = "javascript/func.js"></script> <!-- 自定义脚本 -->
+	<!-- 经常修改的js解决办法，添加时间戳 -->
+	
+	<!-- 引入css文件 -->
+	<link rel = "stylesheet" href = "css/look.css" type = "text/css" /> <!-- 自定义样式表 -->
+	<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>  <!-- 高德地图样式表,应用后会覆盖前段显示 -->
+</head>
+
+<body onload="mapTab()">  <!-- 自动加载地图初始化 -->
+	<ul style="border-top:5px solid red;">
+		<li class="list" onclick="changeMap()">GaodeMap</li>
+		<li class="list" onclick="dataTab()">DataList</li>
+		<li class="list" onclick="historyTab()">History</li>
+	</ul>
+	<div>
+		<div id ="mapshow" style = "height:500px;"></div>
+		<!-- 不需要把table放在div里 -->
+		<div class="pop" id="showdata">
+			<div class="head">
+				<span>mmsi</span>
+				<span>name</span>
+				<span>lng</span>
+				<span>lat</span>
+				<span>course</span>
+				<span>speed</span>
+				<span>type</span>
+				<span>option</span>
+			</div>
+			<div class="body">
+				<table id="tb1">  <!-- 在这里动态添加节点 -->
+				</table>
+			</div>
+		</div>
+		<!-- table是块型标签 -->
+		<div class="pop" id="showhistory">
+			<div class="head">
+				<span>mmsi</span>
+				<span>name</span>
+				<span>lng</span>
+				<span>lat</span>
+				<span>course</span>
+				<span>speed</span>
+				<span>type</span>
+				<span>option</span>
+			</div>
+			<div class="body">
+				<table id="tb2"> <!-- 在这里添加历史节点 -->
+				</table>
+			</div>
+		</div>
+		<div class="pop" id="makeship">
+			<table>
+				<tr>
+					<td>mmsi</td>
+					<td><input type="text"></input></td>
+				</tr>
+				<tr>
+					<td>name</td>
+					<td><input type="text"></input></td>
+				</tr>
+				<tr>
+					<td>lng</td>
+					<td><input type="text"></input></td>
+				</tr>
+				<tr>
+					<td>lat</td>
+					<td><input type="text"></input></td>
+				</tr>
+				<tr>
+					<td>course</td>
+					<td><input type="text"></input></td>
+				</tr>
+				<tr>
+					<td>speed</td>
+					<td><input type="text"></input></td>
+				</tr>
+				<tr>
+					<td>type</td>
+					<td><input type="text"></input></td>
+				</tr>
+				<tr>
+					<td><button onclick="yes()">yes</button></td>
+					<td><button onclick="cancel()">cancel</button></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div style="float:left">
+		<button type="button" style="width:200px;height:50px;" onclick="timer()">Start/Pause</button>
+		<input id="show" type="text" style="width:300px;height:40px;" value="点击新建对象，并自动前进"></input>
+		<!-- <label id="time">time</label> -->
+		<button type="button" onclick="storeSQL()" style="width:100px;height:50px;">SAVE</button>
+		<div id="result"></div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+

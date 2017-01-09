@@ -1,0 +1,123 @@
+@CHARSET "UTF-8";
+
+body{
+	margin:0px;
+	width:100%;
+}
+*{
+	margin:0px;
+	padding:0px;
+}
+
+li{
+	padding:5px 15px;
+	float:left;
+	cursor:pointer;  /*设置鼠标样式*/
+	list-style:none;
+	border-bottom:1px solid black;
+}
+li:hover{
+	background-color:#006c00;
+	color:white;
+}
+
+#mapshow{  /*对地图盒子进行修饰*/
+	float:left;
+	width:100%;
+}
+
+.head{
+    width: 610px;
+    overflow: hidden;
+}
+.head span{
+    float: left;
+    display: inline-block;
+    width: 75px;
+    /* height: 30px; */
+    line-height: 30px;
+    border-style:solid;
+    border-width:1px 0px 1px 1px;
+    border-color:red;
+    
+    text-align: center;
+}
+.body{
+    width: 610px;
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.body table{
+    width: 610px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    text-align: center;
+}
+.body td{
+    padding: 5px 0;
+    border-width:0px 0px 1px 1px;
+    border-style:solid;
+    border-color:blue;
+    text-align:left;
+}
+.body tr:hover{
+	background-color:#c0c0c0;
+}
+.body td.kt{  /* td和kt为什么中间没有空格，加空格后定义失效 */
+    width: 74px;
+    text-align:center;
+}
+.pop{
+	position: absolute;
+	border:1px solid red;
+    background-color:#fff;
+	/* visibility:hidden; */
+	display:none;
+}
+#showdata {  /* 需要进行修改，修饰悬浮在地图上的div */
+	/* position: absolute; */
+	top: 40px;
+	left: 120px;
+	/* border-top:2px solid red;
+	border-right:2px solid #ccc;
+    background-color:#fff;
+	visibility:hidden;
+	display:none; */
+}
+#showhistory {  /*需要进行修改，修饰悬浮在地图上的div*/
+	top: 300px;
+	left: 120px;
+}
+#makeship {
+	width:250px;
+	height:250px;
+	top:150px;
+	left:500px;
+	padding:10px;
+}
+
+label{
+	display:block;
+	border:3px solid red;
+}
+
+/* .marker {
+    color: #ff6600;
+    padding: 4px 10px;
+    border: 1px solid #fff;
+    white-space: nowrap;
+    font-size: 12px;
+    font-family: "";
+    background-color: #0066ff;
+} */
+
+
+
+
+
+
+
+
+
+
