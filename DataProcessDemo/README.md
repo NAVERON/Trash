@@ -25,7 +25,7 @@
 ## ship information process
 #### how to orgnazite ship data, include static and dynamic data, how to deal with Concurrent problems.
 
-## the interesting is the best teacher
+## the interest is the best teacher
 #### go ahead!
 
 
