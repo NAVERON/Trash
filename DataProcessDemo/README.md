@@ -23,9 +23,9 @@
 > 6,709945,ok,0.2,9.9,38.12,45.23,89,140,2016-11-2 13:23:12,yes,9<br>
 
 ## ship information process
-##有几个问题需要提醒：
-1 项目运行需要Mysql connector，即访问数据库API
-2 将Tracks路径点里的messageID类型从Int换成String，否则在解析分析数据的时候会出错，每一步都检验了，但是不知道为什么
+##有几个问题需要提醒：  
+1 项目运行需要Mysql connector，即访问数据库API  
+2 将Tracks路径点里的messageID类型从Int换成String，否则在解析分析数据的时候会出错，每一步都检验了，但是不知道为什么  
 
 ### how to orgnazite ship data, include static and dynamic data, how to deal with Concurrent problems.
 
