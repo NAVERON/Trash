@@ -104,7 +104,7 @@ public class AutoNavigation extends Application {
             this.dragedY = e.getY();
             //System.out.println("autonavigation.AutoNavigation.Draged");
             if(drawing){
-                show.getChildren().remove(line);
+                //show.getChildren().remove(line);                    //这里不移除也可以更新界面，什么原理？上面代码统一把界面移除了，这样这不用重复写了
                 line = new Line(pressedX, pressedY, dragedX, dragedY);
                 show.getChildren().add(line);
             }
