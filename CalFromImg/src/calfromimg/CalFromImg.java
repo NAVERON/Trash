@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -16,10 +17,19 @@ public class CalFromImg extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        Scene scene = new Scene(createContent(), 200, 100);
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     public static void main(String[] args) {
         Application.launch(args);
+    }
+    
+    public Parent createContent(){
+        Pane root = new Pane();
+        root.setPrefSize(200, 100);
+        return root;
     }
  
     /**
@@ -46,7 +56,7 @@ public class CalFromImg extends Application {
      * 
      * 坐标系以左下角围殴原点
      */
-    public double horziential(Point2D bottom, Point2D top, Point2D center, double h){
+    public double horziential(Point2D top, Point2D center, double h){
         double delta_y = top.getY() - center.getY();
         return delta_y + h;
     }
