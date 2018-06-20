@@ -16,65 +16,26 @@ public class CalFromImg extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        Scene scene = new Scene(CreateContent());
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
 
     public static void main(String[] args) {
         Application.launch(args);
     }
-
-    private GraphicsContext g;
-    private Parent CreateContent() {
-        Pane root = new Pane();
-        root.setPrefSize(800, 600);
-
-        Canvas canvas = new Canvas(800, 600);
-        g = canvas.getGraphicsContext2D();
-        canvas.setOnMousePressed((event) -> {
-            System.out.println("hello");
-            if(event.getButton()==MouseButton.PRIMARY){
-                startx = event.getX();
-                starty = event.getY();
-                System.out.println(startx + "," + starty);
-            }else if(event.getButton()==MouseButton.SECONDARY){
-                endx = event.getX();
-                endy = event.getY();
-                System.out.println(endx + ", " + endy);
-            }
-        });
-
-        AnimationTimer timer = new AnimationTimer() {
-            @Override
-            public void handle(long now) {
-                onUpdate();
-            }
-        };
-        timer.start();
-        
-        root.getChildren().add(canvas);
-        return root;
-    }
-    private double startx, starty, endx, endy;
-    public void onUpdate() {
-        g.setStroke(Color.BLUE);
-        g.strokeLine(startx, starty, endx, endy);
-        
-    }
-    
+ 
     /**
      * 计算描述：
      * 无人机拍摄过程中  飞行高度不变，恒定h
      * 无人机与船舶的距离可以测得   恒定d
      * 
+     * 这里计算有一定倾角的情况
+     * 
      * @return 
      */
     public double calcute(){
-        double resault = 0;
+        double result = 0;
         int h = 0;
         
-        return resault;
+        return result;
     }
     
     /**
