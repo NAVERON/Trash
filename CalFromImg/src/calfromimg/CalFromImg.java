@@ -36,12 +36,12 @@ public class CalFromImg extends Application {
      *
      * 这里计算有一定倾角的情况
      *
-     * @param bottom
-     * @param top
-     * @param center
-     * @param h
-     * @param d
-     * @return result
+     * @param bottom  图片桅杆底部点
+     * @param top  图片桅杆  顶点
+     * @param center  摄像中心
+     * @param h  无人机拍摄高度
+     * @param d  无人机距离传播的距离
+     * @return result  计算结果
      */
     public double calcute(Point2D bottom, Point2D top, Point2D center, double h, double d) {
         double result = 0;
@@ -57,7 +57,7 @@ public class CalFromImg extends Application {
 
     /**
      * 问题描述：
-     * 摄像头有拍摄中心，并且作为无人机的中心，当无人机拍摄时，可以获得自身的        飞行高度h
+     * 摄像头有拍摄中心，并且作为无人机的中心，当无人机拍摄时，可以获得自身的    飞行高度h
      * 在图片上检测桅杆的   最高点坐标top，最终可获得    拍摄中心center    和桅杆顶点top   的垂直距离
      * 
      * @param top 桅杆顶部坐标点
