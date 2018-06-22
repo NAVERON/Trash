@@ -1,23 +1,12 @@
 package calfromimg;
 
-import static com.sun.javafx.scene.control.skin.Utils.getResource;
-import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Point2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.input.MouseButton;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import java.awt.*;
-import java.awt.event.*;
-import java.net.URL;
-import javax.swing.*;
 
 public class CalFromImg extends Application {
 
@@ -55,12 +44,16 @@ public class CalFromImg extends Application {
     }
 
     /**
+     * 问题描述：
+     * 摄像头有拍摄中心，并且作为无人机的中心，当无人机拍摄时，可以获得自身的高度h
+     * 在图片上检测桅杆的最高点，最终可获得拍摄中心和桅杆顶点的垂直距离
+     * 
      * @param bottom 桅杆底部坐标点
      * @param top 桅杆顶部坐标点
      * @param center 相机拍照中心点
      * @param h 无人机拍摄的高度
      *
-     * 坐标系以左下角围殴原点
+     * 坐标系以左下角为原点
      */
     public double horziential(Point2D top, Point2D center, double h) {
         double delta_y = top.getY() - center.getY();
